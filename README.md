@@ -5,6 +5,7 @@
 I've created a simple one page app in React.js that displays random quotes.
 
 ### To do:
-1. Add button for displaying random quotes
-2. Publish it to Github Pages
+1. Add button for Twitter sharing
+2. Add more styles
+3. Publish to Github Pages
 
