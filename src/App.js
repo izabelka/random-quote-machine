@@ -4,7 +4,7 @@ import Quote from './Quote';
 import './App.css';
 
 class App extends Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       quotelist: [],
@@ -15,7 +15,13 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       quotelist: quoteList,
-      randomIndex: Math.floor(Math.random()*quoteList.length+1)
+      randomIndex: Math.floor(Math.random()*quoteList.length)
+    });
+  }
+
+  newQuote() { 
+      this.setState({
+        randomIndex: Math.floor(Math.random()*quoteList.length)
     });
   }
 
@@ -32,6 +38,7 @@ class App extends Component {
     return (
       <div className="container">
         {quotelist[this.state.randomIndex]}
+        <button onClick={this.newQuote.bind(this)}>New Quote</button>
       </div>
     );
   }
