@@ -32,7 +32,7 @@ class App extends Component {
       <div className="container">
         {quotelist[this.state.randomIndex]}
         <button onClick={this.newQuote.bind(this)}>New Quote</button>
-            <a href='https://twitter.com/share' className='twitter-share-button' >Tweet</a>
+            <a href='https://twitter.com/share' className='twitter-share-button' data-text="custom share text">Tweet</a>
       </div>
     );
   }
