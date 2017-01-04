@@ -14,16 +14,16 @@ body {
   width: 40em;
 }
 
-.quote-container {
+#quote-container {
   min-height: 7em;
   font-size: 1.2em;
 }
 
-.quote-container .quote {
+#quote {
   font-style: italic;
   line-height: 1.4em;
 }
 
-.quote-container .author {
+#author {
   font-weight: 700;
 }

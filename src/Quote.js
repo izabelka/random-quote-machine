@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
 class Quote extends Component {
-
   render() {
-
     return (
-      <div className="quote-container">
-        <p className="quote">
+      <div id="quote-container">
+        <p id="quote">
           {this.props.quote.quote}
         </p>
-        <p className="author">
+        <p id="author">
           {this.props.quote.author}
         </p>
       </div>

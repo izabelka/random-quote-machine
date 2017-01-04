@@ -12,13 +12,6 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      quotelist: quoteList,
-      randomIndex: Math.floor(Math.random()*quoteList.length)
-    });
-  }
-
   newQuote() { 
       this.setState({
         randomIndex: Math.floor(Math.random()*quoteList.length)
@@ -39,8 +32,16 @@ class App extends Component {
       <div className="container">
         {quotelist[this.state.randomIndex]}
         <button onClick={this.newQuote.bind(this)}>New Quote</button>
+            <a href='https://twitter.com/share' className='twitter-share-button' >Tweet</a>
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.setState({
+      quotelist: quoteList,
+      randomIndex: Math.floor(Math.random()*quoteList.length)
+    });
   }
 }
 
