@@ -10,12 +10,12 @@ body {
   justify-content: center;
 }
 
-.container {
+#container {
   width: 40em;
 }
 
 #quote-container {
-  min-height: 7em;
+  min-height: 8em;
   font-size: 1.2em;
 }
 
@@ -26,4 +26,23 @@ body {
 
 #author {
   font-weight: 700;
+}
+
+#buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#new-quote-button {
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid black;
+  background: #fff;
+}
+
+#new-quote-button:focus {
+  outline: 0;
 }
