@@ -19,8 +19,9 @@ class App extends Component {
   }
 
   render() {
-    var quotelist = this.state.quotelist;
 
+    console.log(this.state.quotelist[this.state.randomIndex]);
+    var quotelist = this.state.quotelist;
     quotelist = quotelist.map(function(quote, index) {
       return(
         <Quote key={ index }
