@@ -29,11 +29,14 @@ class App extends Component {
     })
 
     return (
-      <div id="container">
-        {quotelist[this.state.randomIndex]}
-        <div id="buttons-container">
-          <button id="new-quote-button" onClick={this.newQuote.bind(this)}>New Quote</button>
-          <a href='https://twitter.com/share' className='twitter-share-button' data-text='random qote machine'>Tweet</a>
+      <div>
+        <h1>Random Quote Machine</h1>
+        <div id="container">
+          {quotelist[this.state.randomIndex]}
+          <div id="buttons-container">
+            <button id="new-quote-button" onClick={this.newQuote.bind(this)}>New Quote</button>
+            <a href='https://twitter.com/share' className='twitter-share-button' data-text='random qote machine'>Tweet</a>
+          </div>
         </div>
       </div>
     );
