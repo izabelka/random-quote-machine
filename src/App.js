@@ -20,7 +20,6 @@ class App extends Component {
 
   render() {
 
-    console.log(this.state.quotelist[this.state.randomIndex]);
     var quotelist = this.state.quotelist;
     quotelist = quotelist.map(function(quote, index) {
       return(
@@ -34,7 +33,7 @@ class App extends Component {
         {quotelist[this.state.randomIndex]}
         <div id="buttons-container">
           <button id="new-quote-button" onClick={this.newQuote.bind(this)}>New Quote</button>
-          <a href='https://twitter.com/share' className='twitter-share-button' data-text="custom share text">Tweet</a>
+          <a href='https://twitter.com/share' className='twitter-share-button' data-text='random qote machine'>Tweet</a>
         </div>
       </div>
     );
