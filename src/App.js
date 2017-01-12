@@ -7,14 +7,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quotelist: [],
-      randomIndex : 0
+      quotelist: quoteList,
+      randomIndex: Math.floor(Math.random()*quoteList.length),
+      quoteToShare: ''
     };
   }
 
-  newQuote() { 
-      this.setState({
-        randomIndex: Math.floor(Math.random()*quoteList.length)
+
+  newQuote() {
+    var newIndex = Math.floor(Math.random()*quoteList.length);
+    var newQuoteToShare = quoteList[newIndex].quote.slice(0, 100) + '...';
+    this.setState({
+      randomIndex: newIndex
+    });
+    this.setState({
+      quoteToShare: newQuoteToShare
     });
   }
 
@@ -26,7 +33,7 @@ class App extends Component {
         <Quote key={ index }
           quote={ quote } />
       )
-    })
+    }, this)
 
     return (
       <div>
@@ -35,17 +42,16 @@ class App extends Component {
           {quotelist[this.state.randomIndex]}
           <div id="buttons-container">
             <button id="new-quote-button" onClick={this.newQuote.bind(this)}>New Quote</button>
-            <a href='https://twitter.com/share' className='twitter-share-button' data-text='random qote machine'>Tweet</a>
+            <a href='https://twitter.com/share' className='twitter-share-button' data-text={this.state.quoteToShare}>Tweet</a>
           </div>
         </div>
       </div>
     );
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.setState({
-      quotelist: quoteList,
-      randomIndex: Math.floor(Math.random()*quoteList.length)
+      quoteToShare: quoteList[this.state.randomIndex].quote.slice(0, 100) + '...'
     });
   }
 }
